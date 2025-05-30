@@ -131,6 +131,44 @@ jobs:
 - **Database connection issues**: Verify your database credentials in the `.env` file
 - **API errors**: Check server logs for detailed error messages
 
+## Preview Deployments with Vercel
+
+Vercel is a cloud platform for static sites and Serverless Functions that enables developers to host websites and web services that deploy instantly, scale automatically, and require no supervision. It's particularly well-suited for Next.js applications.
+
+### 1. Create a Vercel Account
+
+- Go to [https://vercel.com/signup](https://vercel.com/signup) and sign up using your GitHub, GitLab, Bitbucket account, or email.
+
+### 2. Connect Your GitHub Repository to Vercel
+
+- After signing up and logging in, you'll be redirected to the Vercel dashboard.
+- Click on "Add New..." and select "Project".
+- The "Import Git Repository" section will show your GitHub repositories. If you don't see your repository, you might need to configure your GitHub integration by clicking on "Adjust GitHub App Permissions" under your GitHub account name.
+- Find your YH E-commerce website repository and click "Import".
+
+### 3. Configure Project Settings in Vercel
+
+- **Framework Preset**: Vercel will automatically detect that you are using Next.js.
+- **Root Directory**: If your Next.js app is not in the root of your repository (e.g., it's in a subdirectory like `/app` or `/frontend`), specify the correct root directory. For this project, it should be the root.
+- **Build and Output Settings**: These are typically auto-detected for Next.js. You usually don't need to change these.
+- **Environment Variables**:
+    - You will need to add the same environment variables here that you have in your `.env` file for production, or any specific variables needed for preview environments.
+    - Go to your Project Settings > Environment Variables.
+    - Add each variable (e.g., `DB_HOST`, `DB_USER`, `NEXT_PUBLIC_SITE_URL`, `MAKE_WEBHOOK_URL`, etc.). For preview deployments, `NEXT_PUBLIC_SITE_URL` will be automatically handled by Vercel using its own domain for the preview. You might want to set up different database credentials or Make.com webhook URLs for preview/testing environments if necessary.
+
+- Click "Deploy". Vercel will now build and deploy your project.
+
+### 4. Accessing Preview Links
+
+- Once Vercel is connected to your GitHub repository, it will automatically deploy every push to any branch.
+- For every new commit pushed to a branch (including `main` and any feature branches), Vercel will create a unique preview deployment.
+- You can find the links to these preview deployments in a few places:
+    - **GitHub Pull Requests**: Vercel automatically adds a comment to your pull requests with a link to the preview deployment. This is extremely useful for reviewing changes before merging.
+    - **Vercel Dashboard**: In your project dashboard on Vercel, you'll see a list of all deployments, including preview deployments. Each deployment will have a unique URL (e.g., `your-project-name-git-branch-your-username.vercel.app` or `your-project-name-randomhash.vercel.app`).
+- These preview links allow you and your team to view changes live in an environment that mirrors production before merging code to the main branch.
+
+This setup provides a seamless way to test and review your application throughout the development lifecycle.
+
 ## Make.com Integration
 
 1. Log in to your Make.com account
