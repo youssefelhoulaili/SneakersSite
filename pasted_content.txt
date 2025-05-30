@@ -1,0 +1,64 @@
+Build a responsive, Nike-inspired e-commerce website for a Moroccan audience, using Next.js (React) and Tailwind CSS, to be hosted on Hostinger with a MySQL database. Key requirements:
+
+1. **Internationalization & Layout**  
+   - Support Arabic (RTL), French and English (LTR) versions.  
+   - Detect user browser language (Accept-Language) and auto-redirect to the matching locale (fr, en, ar).  
+   - Provide a language switcher in the header.  
+   - Use Next-i18next (or equivalent) for content translations and locale routing.  
+   - Load appropriate Tailwind classes (`dir="rtl"` for Arabic pages).
+
+2. **Brand & Audience**  
+   - Clean, athletic look inspired by Nike.com.  
+   - Prices in MAD with separators and “MAD” suffix.  
+   - Copy translated for each locale—menu labels, buttons, product info, form placeholders.
+
+3. **Business Model**  
+   - Cash-on-Delivery only: orders are “pending COD” until delivery.  
+   - Validate shipping within Morocco (postal code patterns).  
+   - Show COD fee in locale format.
+
+4. **Key Pages & Components**  
+   - **Home (/**{locale}**/)**: Hero carousel with localized copy, featured products.  
+   - **Catalog (/**{locale}/shop)**: Filters (sport, lifestyle), search, sort, all labels localized.  
+   - **Product Detail (/**{locale}/product/[slug])**: Image zoom on hover, size selector, Add to Cart button with hover scale + underline animation.  
+   - **Cart & Checkout (/**{locale}/cart & /checkout)**: Cart summary, address form with inline validation messages in user’s language, confirm order.  
+   - **Order Confirmation**: Localized summary and “What’s next” instructions.
+
+5. **Modern Hover Animations**  
+   - **Buttons**: scale to 1.05×, underline slide-in.  
+   - **Product Cards**: lift with box-shadow transition.  
+   - **Nav Links**: sliding underline.
+
+6. **Database Schema (MySQL)**  
+   - `users(id, name, email, phone, preferred_locale, created_at)`  
+   - `products(id, slug, price_mad, stock_qty, images JSON, created_at)`  
+   - `product_translations(product_id, locale, name, description)`  
+   - `orders(id, user_id nullable, status ENUM('pending','confirmed',…), total_mad, cod_fee_mad, shipping_address JSON, locale, created_at)`  
+   - `order_items(id, order_id, product_id, quantity, unit_price_mad)`  
+   - `automations_log(id, event, payload JSON, status, processed_at)`
+
+   Include foreign keys, indexes, and triggers to prevent oversell.
+
+7. **Error Handling**  
+   - Front-end & back-end validation with localized error messages.  
+   - Stock conflicts → “Sorry, sold out” in user’s language.  
+   - Network/database fallbacks with retry options.  
+   - Log all failures to `automations_log`.
+
+8. **Hostinger Deployment**  
+   - Dockerfile or GitHub Actions for build & deploy.  
+   - Use env vars: DB_HOST, DB_USER, DB_PASS, DB_NAME from Hostinger.  
+   - Next.js `next.config.js` configured for i18n locales.
+
+9. **Make.com Automation**  
+   - Webhook on `order_created` (pending COD) → Make.com scenario:  
+     1. Send WhatsApp via Business API (localized message).  
+     2. Append row to Google Sheet with order + customer locale.  
+     3. Email admin notification.
+
+10. **Testing & Quality**  
+   - Unit tests for cart & form validation in each locale.  
+   - E2E test for full COD checkout flow.  
+   - ESLint/Prettier configured.
+
+Deliver the full Next.js scaffold, Tailwind config, database migration SQL, Make.com scenario outline, and Hostinger deployment instructions—ready to run out of the box with Arabic, French, and English support.

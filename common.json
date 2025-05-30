@@ -1,0 +1,106 @@
+{
+  "header": {
+    "home": "Home",
+    "shop": "Shop",
+    "cart": "Cart",
+    "account": "Account",
+    "language": "Language"
+  },
+  "footer": {
+    "about": "About YH",
+    "contact": "Contact Us",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2025 YH. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "ELEVATE YOUR GAME",
+      "subtitle": "Premium athletic wear for the modern athlete",
+      "cta": "Shop Now"
+    },
+    "featured": "Featured Products",
+    "categories": "Shop by Category",
+    "newArrivals": "New Arrivals"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "size": "Size",
+    "color": "Color",
+    "quantity": "Quantity",
+    "description": "Description",
+    "details": "Product Details",
+    "reviews": "Reviews",
+    "relatedProducts": "You may also like"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "checkout": "Proceed to Checkout",
+    "summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "codFee": "Cash on Delivery Fee",
+    "total": "Total",
+    "remove": "Remove"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shippingAddress": "Shipping Address",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "placeOrder": "Place Order",
+    "paymentMethod": "Payment Method",
+    "cashOnDelivery": "Cash on Delivery",
+    "orderConfirmation": "Order Confirmation",
+    "thankYou": "Thank you for your order!",
+    "orderNumber": "Order Number",
+    "orderDate": "Order Date",
+    "whatNext": "What's Next?",
+    "orderProcessing": "Your order is being processed and will be delivered within 3-5 business days.",
+    "contactInfo": "We will contact you via WhatsApp for delivery confirmation."
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid phone number",
+    "invalidPostalCode": "Please enter a valid postal code"
+  },
+  "filters": {
+    "title": "Filters",
+    "price": "Price",
+    "category": "Category",
+    "sport": "Sport",
+    "gender": "Gender",
+    "size": "Size",
+    "color": "Color",
+    "apply": "Apply Filters",
+    "clear": "Clear All",
+    "sort": "Sort By",
+    "newest": "Newest",
+    "priceLowToHigh": "Price: Low to High",
+    "priceHighToLow": "Price: High to Low",
+    "popularity": "Popularity"
+  },
+  "categories": {
+    "running": "Running",
+    "training": "Training",
+    "basketball": "Basketball",
+    "football": "Football",
+    "lifestyle": "Lifestyle",
+    "accessories": "Accessories"
+  },
+  "errors": {
+    "general": "Something went wrong. Please try again.",
+    "outOfStock": "Sorry, this product is out of stock.",
+    "networkError": "Network error. Please check your connection and try again.",
+    "retry": "Retry"
+  }
+}
